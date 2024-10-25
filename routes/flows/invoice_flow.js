@@ -103,7 +103,7 @@ const getNext = async (decryptedBody) => {
                     url: `${process.env.LOCALHOST}/graphql`,
                     method: 'post',
                     headers: {
-                      "authorization": tokens
+                      "authorization": token
                     },
                     data: {
                       query: `mutation{
