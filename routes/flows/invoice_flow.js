@@ -110,8 +110,8 @@ const getNext = async (decryptedBody) => {
                         }
                     }
 
-                console.log(variables)
-               const query=`mutation{sendInvoice(data: ${JSON.stringify(variables)}) {status}}`
+                const var=JSON.stringify(variables)
+               const query=`mutation{sendInvoice(data: "${var}") {status}}`
                     console.log(query)
                     const __es = await axios({
                         url: `${process.env.LOCALHOST}/graphql`,
@@ -128,6 +128,7 @@ const getNext = async (decryptedBody) => {
                     })
                     console.log(__es)
                 return {
+                    screen: "INVOICE",
                     data: {
                         extension_message_response: {
                             params: {
