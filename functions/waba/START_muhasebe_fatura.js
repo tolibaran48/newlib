@@ -26,7 +26,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
         },
         data: {
             query: `query{
-               wabaUser(phoneNumber: "5494191961") {
+               wabaUser(phoneNumber: "${phoneNumber}") {
                  phoneNumber
                  companies {
                    name
@@ -38,12 +38,12 @@ const START_muhasebe_fatura = async (phoneNumber) => {
            }`
         }
     })
-console.log(invoices)
+    
     const companies = invoices.data.data.wabaUser.companies.map((company) => {
         return { "id": company.vergi.vergiNumarasi, "title": company.name, "description": "" }
     })
 
-  /*  axios({
+   axios({
         "method": "POST",
         "url": `https://graph.facebook.com/v18.0/${process.env.WABA_PHONE_ID}/messages`,
         "headers": {
@@ -81,7 +81,7 @@ console.log(invoices)
                 }
             }
         }
-    });*/
+    });
 
 
 
