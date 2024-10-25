@@ -103,7 +103,7 @@ const getNext = async (decryptedBody) => {
                         data: {
                             "to": `90${data.phoneNumber}`,
                             "company": invoice.data.data.concubine.company.name,
-                            "invoiceDate": invoice.data.data.concubine.processDate,
+                            "invoiceDate": dayjs(invoice.data.data.concubine.processDate).format("DD/MM/YYYY"),
                             "invoiceAmount": invoice.data.data.concubine.debt,
                             "type": "upload",
                             "fileName": invoice.data.data.concubine.processNumber
