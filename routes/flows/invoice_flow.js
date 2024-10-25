@@ -99,17 +99,20 @@ const getNext = async (decryptedBody) => {
                         }
                     })
                 
-                    const variables = {
-                            "to": `90${data.phoneNumber}`,
-                            "company": invoice.data.data.concubine.company.name,
-                            "invoiceDate": dayjs(invoice.data.data.concubine.processDate).format("DD/MM/YYYY"),
-                            "invoiceAmount": invoice.data.data.concubine.debt,
-                            "type": "upload",
-                            "fileName": invoice.data.data.concubine.processNumber
+                    const es = await axios({
+                    url: `${process.env.LOCALHOST}/graphql`,
+                    method: 'post',
+                    headers: {
+                      "authorization": tokens
+                    },
+                    data: {
+                      query: `mutation{
+                       sendInvoice(data:{to: "90${data.phoneNumber}", invoiceDate: ${dayjs(invoice.data.data.concubine.processDate).format("DD/MM/YYYY")},company: ${invoice.data.data.concubine.company.name},invoiceAmount: ${invoice.data.data.concubine.debt},type: "upload",fileName: ${invoice.data.data.concubine.processNumber}}){
+                        status
+                       }
+                      }`
                     }
-
-                console.log(variables)
-                const vari=JSON.stringify(variables)
+                  })
               
                 return {
                     screen: "INVOICE",
