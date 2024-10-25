@@ -22,7 +22,7 @@ const Firma = {
     },
     companies: async (parent, args, { token, Firma }) => {
         await auth(token);
-
+        console.log("buradaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
         try {
             return await Firma.find().sort({ "workingStatus": 1, "name": 1 });
         } catch (error) {
