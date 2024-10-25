@@ -21,7 +21,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
     const token = await createToken.generate({ phoneNumber }, '5m');
 
     const invoices = await axios({
-        url: 'https://yalikavak-358f781f0743.herokuapp.com/graphql',
+        url: `${process.env.LOCALHOST}/graphql`,
         method: 'post',
         headers: {
             "authorization": token
@@ -40,7 +40,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
            }`
         }
     })
-    console.log(invoices.data.data)
+    
     const companies = invoices.data.data.wabaUser.companies.map((company) => {
         return { "id": company.vergi.vergiNumarasi, "title": company.name, "description": "" }
     })
@@ -84,9 +84,6 @@ const START_muhasebe_fatura = async (phoneNumber) => {
             }
         }
     });
-
-
-
 }
 
 module.exports = START_muhasebe_fatura;
