@@ -50,7 +50,7 @@ const getNext = async (decryptedBody) => {
         switch (screen) {
             case "COMPANY":
                 const _invoices = await axios({
-                    url: 'http://localhost:4000/graphql',
+                    url: `${process.env.LOCALHOST}/graphql`,
                     method: 'post',
                     headers: {
                         "authorization": token
@@ -80,7 +80,7 @@ const getNext = async (decryptedBody) => {
             case "INVOICE":
                 data.invoice.forEach(async element => {
                     const invoice = await axios({
-                        url: 'http://localhost:4000/graphql',
+                        url: `${process.env.LOCALHOST}/graphql`,
                         method: 'post',
                         headers: {
                             "authorization": token
@@ -111,7 +111,7 @@ const getNext = async (decryptedBody) => {
                     }
 
                     const __es = await axios({
-                        url: 'http://localhost:4000/graphql',
+                        url: `${process.env.LOCALHOST}/graphql`,
                         method: 'post',
                         headers: {
                             "authorization": token
