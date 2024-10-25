@@ -68,7 +68,7 @@ const getNext = async (decryptedBody) => {
                         }`
                     }
                 })
-console.log(_invoices)
+console.log(_invoices.data.data.company)
                 const invoices = _invoices.data.data.company.invoices.map((invoice) => {
                     return { "id": invoice.processNumber, "title": dayjs(invoice.processDate).format("DD/MM/YYYY"), "description": invoice.processNumber, "metadata": `${invoice.debt} TL` }
                 })
