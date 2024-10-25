@@ -110,6 +110,8 @@ const getNext = async (decryptedBody) => {
                         }
                     }
 
+                console.log(variables)
+
                     const __es = await axios({
                         url: `${process.env.LOCALHOST}/graphql`,
                         method: 'post',
