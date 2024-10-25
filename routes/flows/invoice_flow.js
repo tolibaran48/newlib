@@ -120,7 +120,7 @@ const getNext = async (decryptedBody) => {
                             "authorization": token
                         },
                         data: {
-                            query: `mutation{sendInvoice(data: "${JSON.stringify(variables)}") {
+                            query: `mutation{sendInvoice(data: "${vari}") {
                                     status
                                     }
                                 }`
