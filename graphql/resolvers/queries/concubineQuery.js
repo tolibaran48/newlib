@@ -6,8 +6,10 @@ const Concubine = {
         await auth(token);
 
         try {
-            return await Cari.findOne({ "processNumber": args.processNumber });
-
+            console.log(args)
+            const cari= await Cari.findOne({ "processNumber": args.processNumber });
+            console.log(cari)
+            return cari
         } catch (error) {
             throw new GraphQLError(error)
         }
