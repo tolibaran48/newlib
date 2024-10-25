@@ -115,7 +115,7 @@ const getNext = async (decryptedBody) => {
                   })
               
                 return {
-                    screen: "INVOICE",
+                    screen: "SUCCESS",
                     data: {
                         extension_message_response: {
                             params: {
