@@ -38,7 +38,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
            }`
         }
     })
-    
+    console.log(invoices.data.data)
     const companies = invoices.data.data.wabaUser.companies.map((company) => {
         return { "id": company.vergi.vergiNumarasi, "title": company.name, "description": "" }
     })
