@@ -19,7 +19,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
     const token = await createToken.generate({ phoneNumber }, '5m');
 
     const invoices = await axios({
-        url: 'http://127.0.0.1/graphql',
+        url: '/graphql',
         method: 'post',
         headers: {
             "authorization": token
