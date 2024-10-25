@@ -42,7 +42,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
     const companies = invoices.data.data.wabaUser.companies.map((company) => {
         return { "id": company.vergi.vergiNumarasi, "title": company.name, "description": "" }
     })
-
+console.log(companies)
     axios({
         "method": "POST",
         "url": `https://graph.facebook.com/v18.0/${process.env.WABA_PHONE_ID}/messages`,
