@@ -120,13 +120,13 @@ const getNext = async (decryptedBody) => {
                         },
                         data: {
                             query: `mutation{
-                                    sendInvoice(data: "${variables.data}") {
+                                    sendInvoice(data: "${variables}") {
                                     status
                                     }
                                 }`
                         }
                     })
-                    
+                    console.log(__es)
              /*   return {
                     ...SCREEN_RESPONSES.SUCCESS,
                     data: {
