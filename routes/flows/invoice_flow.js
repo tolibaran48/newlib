@@ -78,9 +78,7 @@ const getNext = async (decryptedBody) => {
                     data: {invoices},
                 };
 
-            case "INVOICE":
-               
-                 console.log({data_invoice:data.invoice[0]})
+            case "INVOICE":                
                     const invoice = await axios({
                         url: `${process.env.LOCALHOST}/graphql`,
                         method: 'post',
@@ -100,17 +98,15 @@ const getNext = async (decryptedBody) => {
                             }`
                         }
                     })
-                 console.log(invoice.data.errors)
-                        console.log(invoice)
-               
+                
                     const variables = {
                         data: {
                             "to": `90${data.phoneNumber}`,
-                            "company": invoice.company.name,
-                            "invoiceDate": invoice.processDate,
-                            "invoiceAmount": invoice.debt,
+                            "company": invoice.data.data.concubine.company.name,
+                            "invoiceDate": invoice.data.data.concubine.processDate,
+                            "invoiceAmount": invoice.data.data.concubine.debt,
                             "type": "upload",
-                            "fileName": invoice.processNumber
+                            "fileName": invoice.data.data.concubine.processNumber
                         }
                     }
 
