@@ -131,7 +131,7 @@ const getNext = async (decryptedBody) => {
                 }
                     const cevap=result()
 console.log(cevap)
-                return {
+             /*   return {
                     ...SCREEN_RESPONSES.SUCCESS,
                     data: {
                         extension_message_response: {
@@ -140,7 +140,7 @@ console.log(cevap)
                             },
                         },
                     },
-                };
+                };*/
 
             default:
                 break;
