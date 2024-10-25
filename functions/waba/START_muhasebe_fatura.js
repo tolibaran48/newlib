@@ -4,7 +4,7 @@ const WabaYetkili = require("../../models/WabaUser");
 const createToken = require("../../helpers/token");
 
 const START_muhasebe_fatura = async (phoneNumber) => {
-    if(phoneNumber.length!==12){
+    if(phoneNumber.length==12){
         phoneNumber=phoneNumber.substring(2)
     }
     const yetki = await WabaYetkili.find(phoneNumber)
