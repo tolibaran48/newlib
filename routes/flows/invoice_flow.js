@@ -72,7 +72,7 @@ const getNext = async (decryptedBody) => {
                 const invoices = _invoices.data.data.company.invoices.map((invoice) => {
                     return { "id": invoice.processNumber, "title": dayjs(invoice.processDate).format("DD/MM/YYYY"), "description": invoice.processNumber, "metadata": `${invoice.debt} TL` }
                 })
-                    console.log(invoices)
+                
                 return {
                     screen: 'INVOICE',
                     data: {invoices},
@@ -99,7 +99,7 @@ const getNext = async (decryptedBody) => {
                             }`
                         }
                     })
-
+                        console.log(invoice)
                     const variables = {
                         data: {
                             "to": `90${data.phoneNumber}`,
