@@ -109,7 +109,8 @@ const getNext = async (decryptedBody) => {
                     }
 
                 console.log(variables)
-
+               const query=`mutation{sendInvoice(data: "${variables}") {status}}`
+                    console.log(query)
                     const __es = await axios({
                         url: `${process.env.LOCALHOST}/graphql`,
                         method: 'post',
@@ -124,8 +125,7 @@ const getNext = async (decryptedBody) => {
                         }
                     })
                     console.log(__es)
-             /*   return {
-                    ...SCREEN_RESPONSES.SUCCESS,
+                return {
                     data: {
                         extension_message_response: {
                             params: {
@@ -133,7 +133,7 @@ const getNext = async (decryptedBody) => {
                             },
                         },
                     },
-                };*/
+                };
 
             default:
                 break;
