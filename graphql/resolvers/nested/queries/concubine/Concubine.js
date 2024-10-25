@@ -6,8 +6,7 @@ const Concubine = {
         await auth(token);
 
         try {
-            console.log(args)
-            return await Firma.findById(args.company);
+            return await Firma.findById(parent.company);
         } catch (error) {
             throw new GraphQLError(error)
         }
