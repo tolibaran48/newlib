@@ -72,8 +72,8 @@ const START_muhasebe_fatura = async (phoneNumber) => {
                     "name": "flow",
                     "parameters": {
                         "flow_message_version": "3",
-                        "flow_token": "1282243802768507",
-                        "flow_name": "invoice_flow_v0",
+                        "flow_token": "1088448959650327",
+                        "flow_name": "invoice_flow_v1",
                         "flow_cta": "Fatura indir",
                         "flow_action_payload": {
                             "screen": "COMPANY",
