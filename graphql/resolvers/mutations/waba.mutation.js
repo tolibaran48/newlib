@@ -7,6 +7,9 @@ const axios = require('axios');
 module.exports = {
     sendInvoice: async (parent, args, { token }) => {
         await auth(token);
+
+        console.log({"args":args.data})
+        
         const values = jwt.verify(token, process.env.mediaJwtSecret)
         const privateClaim = {
             "iss": values.email,
