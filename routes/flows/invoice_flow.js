@@ -128,7 +128,7 @@ const getNext = async (decryptedBody) => {
                     })
                 });
                     return true
-)
+                }
                     const cevap=result()
 console.log(cevap)
                 return {
