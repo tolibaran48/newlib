@@ -75,7 +75,7 @@ const getNext = async (decryptedBody) => {
                     console.log(invoices)
                 return {
                     screen: 'INVOICE',
-                    data: invoices,
+                    data: {invoices},
                 };
 
             case "INVOICE":
