@@ -26,7 +26,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
         },
         data: {
             query: `query{
-               wabaUser(phoneNumber: "${phoneNumber}") {
+               wabaUser(phoneNumber: "5494191961") {
                  phoneNumber
                  companies {
                    name
