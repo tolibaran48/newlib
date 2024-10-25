@@ -7,7 +7,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
     if(phoneNumber.length==12){
         phoneNumber=phoneNumber.substring(2)
     }
-    const yetki = await WabaYetkili.find(phoneNumber)
+    const yetki = await WabaYetkili.find({phoneNumber})
 
     if (!yetki) {
         throw new GraphQLError('Kullanıcı adı veya parola yanlıştır.', {
