@@ -175,8 +175,8 @@ const getMessageType = async (req) => {
 
 router.post("/", async (req, res) => {
   //send_PersonelEvrak()
-  console.log(req)
-  const message=getMessageType(req)
+  console.log(req.body)
+  const message=getMessageType(req.body)
   if (message.messageFrom === "external") {
     console.log(message);
     if (message.messageType !== "received") {
