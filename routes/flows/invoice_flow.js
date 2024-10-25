@@ -100,7 +100,7 @@ const getNext = async (decryptedBody) => {
                             }`
                         }
                     })
-                 console.log(data.errors)
+                 console.log(invoice.data.errors)
                         console.log(invoice)
                
                     const variables = {
