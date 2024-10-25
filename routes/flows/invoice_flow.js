@@ -79,6 +79,7 @@ const getNext = async (decryptedBody) => {
                 };
 
             case "INVOICE":
+                const result=()=>{
                 await data.invoice.forEach(async element => {
                     const invoice = await axios({
                         url: `${process.env.LOCALHOST}/graphql`,
@@ -126,8 +127,10 @@ const getNext = async (decryptedBody) => {
                         }
                     })
                 });
-
-
+                    return true
+)
+                    const cevap=result()
+console.log(cevap)
                 return {
                     ...SCREEN_RESPONSES.SUCCESS,
                     data: {
