@@ -43,6 +43,7 @@ router.get("/media/:media_id", async (req, res) => {
 
 const getMessageType = async (req) => {
   const comingValue = req.body.entry?.[0]?.changes[0]?.value;
+  console.log({comingValue})
   let comingMessage;
   let comingMessageType;
   let mainMessageType;
@@ -175,8 +176,8 @@ const getMessageType = async (req) => {
 
 router.post("/", async (req, res) => {
   //send_PersonelEvrak()
-  console.log(req.body.entry?.[0]?.changes[0]?.value;)
   const message=getMessageType(req)
+  console.log(message)
   if (message.messageFrom === "external") {
     console.log(message);
     if (message.messageType !== "received") {
