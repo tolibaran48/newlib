@@ -108,6 +108,7 @@ const getNext = async (decryptedBody) => {
                             "fileName": invoice.data.data.concubine.processNumber
                     }
 
+                console.log(variables)
                 const vari=JSON.stringify(variables)
               
                 return {
