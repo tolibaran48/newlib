@@ -79,7 +79,7 @@ const getNext = async (decryptedBody) => {
                 };
 
             case "INVOICE":
-                const result=()=>{
+                const result=async()=>{
                 await data.invoice.forEach(async element => {
                     const invoice = await axios({
                         url: `${process.env.LOCALHOST}/graphql`,
