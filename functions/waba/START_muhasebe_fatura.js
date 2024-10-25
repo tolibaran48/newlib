@@ -5,7 +5,7 @@ const createToken = require("../../helpers/token");
 
 const START_muhasebe_fatura = async (phoneNumber) => {
 
-    const yetki = await WabaYetkili.find({ phoneNumber })
+    const yetki = await WabaYetkili.find(phoneNumber)
 
     if (!yetki) {
         throw new GraphQLError('Kullanıcı adı veya parola yanlıştır.', {
