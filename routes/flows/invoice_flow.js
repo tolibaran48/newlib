@@ -80,7 +80,7 @@ const getNext = async (decryptedBody) => {
 
             case "INVOICE":
                
-                
+                 console.log({data_invoice:data.invoice[0]})
                     const invoice = await axios({
                         url: `${process.env.LOCALHOST}/graphql`,
                         method: 'post',
@@ -100,7 +100,9 @@ const getNext = async (decryptedBody) => {
                             }`
                         }
                     })
+                 console.log(data.errors)
                         console.log(invoice)
+               
                     const variables = {
                         data: {
                             "to": `90${data.phoneNumber}`,
