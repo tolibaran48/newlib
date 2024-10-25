@@ -186,7 +186,7 @@ router.post("/", async (req, res) => {
         case "list_reply":
           switch (message.message.interactive.list_reply.id) {
             case "START_muhasebe_fatura":
-              console.log({ "from": message.message.from })
+              START_muhasebe_fatura(message.message.from)
               break;
           }
 
