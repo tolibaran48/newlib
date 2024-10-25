@@ -100,14 +100,12 @@ const getNext = async (decryptedBody) => {
                     })
                 
                     const variables = {
-                        data:{
                             "to": `90${data.phoneNumber}`,
                             "company": invoice.data.data.concubine.company.name,
                             "invoiceDate": dayjs(invoice.data.data.concubine.processDate).format("DD/MM/YYYY"),
                             "invoiceAmount": invoice.data.data.concubine.debt,
                             "type": "upload",
                             "fileName": invoice.data.data.concubine.processNumber
-                        }
                     }
 
                 const vari=JSON.stringify(variables)
