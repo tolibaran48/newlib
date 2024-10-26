@@ -44,7 +44,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
     const companies = invoices.data.data.wabaUser.companies.map((company) => {
         return { "id": company.vergi.vergiNumarasi, "title": company.name, "description": "" }
     })
-
+console.log({companiesLength:companies.length})
     if (companies.length > 0) {
         axios({
             "method": "POST",
