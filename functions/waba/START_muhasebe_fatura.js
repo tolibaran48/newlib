@@ -42,10 +42,10 @@ const START_muhasebe_fatura = async (phoneNumber) => {
     })
 
     if (invoices.data.data.wabaUser) {
-    const companies = invoices.data.data.wabaUser.companies.map((company) => {
-        return { "id": company.vergi.vergiNumarasi, "title": company.name, "description": "" }
-    })
-    
+        const companies = invoices.data.data.wabaUser.companies.map((company) => {
+            return { "id": company.vergi.vergiNumarasi, "title": company.name, "description": "" }
+        })
+
         axios({
             "method": "POST",
             "url": `https://graph.facebook.com/v18.0/${process.env.WABA_PHONE_ID}/messages`,
@@ -94,39 +94,13 @@ const START_muhasebe_fatura = async (phoneNumber) => {
                 Authorization: `Bearer ${process.env.WABA_API_TOKEN}`,
             },
             "data": {
-  "messaging_product": "whatsapp",
-  "recipient_type": "individual",
-  "to": phoneNumber,
-  "type": "template",
-  "template": {
-    "name": "IBAN",
-    "language": {
-      "code": "tr"
-    },
-    "components": [
-      {
-        "type": "body",
-        "parameters": [
-          {
-            "type": "text",
-            "text": "TR40 5075 9592 1151 11"
-          }
-        ]
-      },
-      {
-        "type": "button",
-        "sub_type": "url",
-        "index": "0",
-        "parameters": [
-          {
-            "type": "text",
-            "text": "TR40 5075 9592 1151 11"
-          }
-        ]
-      }
-    ]
-  }
-}
+                "messaging_product": "whatsapp",
+                "recipient_type": "individual",
+                "to": phoneNumber,
+                "type": "text",
+                "text": {
+                    "body": "Yetkili olduğunuz firma bulunmamaktadır!"
+                }
             }
         });
     }
