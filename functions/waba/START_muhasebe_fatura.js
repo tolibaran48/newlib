@@ -94,13 +94,39 @@ const START_muhasebe_fatura = async (phoneNumber) => {
                 Authorization: `Bearer ${process.env.WABA_API_TOKEN}`,
             },
             "data": {
-                "messaging_product": "whatsapp",
-                "recipient_type": "individual",
-                "to": phoneNumber,
-                "type": "text",
-                "text": {
-                    "body": "Yetkili olduğunuz firma bulunmamaktadır!"
-                }
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": phoneNumber,
+  "type": "template",
+  "template": {
+    "name": "IBAN",
+    "language": {
+      "code": "tr_TR"
+    },
+    "components": [
+      {
+        "type": "body",
+        "parameters": [
+          {
+            "type": "text",
+            "text": "TR40 5075 9592 1151 11"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "sub_type": "url",
+        "index": "0",
+        "parameters": [
+          {
+            "type": "Kopyala",
+            "text": "TR40 5075 9592 1151 11"
+          }
+        ]
+      }
+    ]
+  }
+}
             }
         });
     }
