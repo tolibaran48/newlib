@@ -96,7 +96,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
             "data": {
                 "messaging_product": "whatsapp",
                 "recipient_type": "individual",
-                "to": "<WHATSAPP_USER_PHONE_NUMBER>",
+                "to": phoneNumber,
                 "type": "text",
                 "text": {
                     "header": {
@@ -104,7 +104,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
                         "text": "Yetkili olduğunuz firma bulunmamaktadır."
                     },
                     "body": {
-                        "text": phoneNumber
+                        "text": "fdgfgfhfgfgfg"
                     },
                     "footer": {
                         "text": "Bodrum Yalıkavak İş Sağlığı ve Güvenliği Ltd. Şti."
