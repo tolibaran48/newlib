@@ -99,7 +99,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
                 "to": phoneNumber,
                 "type": "text",
                 "text": {
-                    "body": {"Yetkili olduğunuz firma bulunmamaktadır!"}
+                    "body": "Yetkili olduğunuz firma bulunmamaktadır!"
                 }
             }
         });
