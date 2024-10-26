@@ -78,7 +78,8 @@ const getNext = async (decryptedBody) => {
                     data: {invoices},
                 };
 
-            case "INVOICE":                
+            case "INVOICE": 
+                data.invoice.forEach((element)=>                   
                     const invoice = await axios({
                         url: `${process.env.LOCALHOST}/graphql`,
                         method: 'post',
@@ -87,7 +88,7 @@ const getNext = async (decryptedBody) => {
                         },
                         data: {
                             query: `query{
-                              concubine(processNumber: "${data.invoice[0]}") {
+                              concubine(processNumber: "${element}") {
                                 company {
                                     name
                                 }
@@ -113,6 +114,7 @@ const getNext = async (decryptedBody) => {
                       }`
                     }
                   })
+                 )
               
                 return {
                     screen: "SUCCESS",
