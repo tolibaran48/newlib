@@ -99,16 +99,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
                 "to": phoneNumber,
                 "type": "text",
                 "text": {
-                    "header": {
-                        "type": "text",
-                        "text": "Yetkili olduğunuz firma bulunmamaktadır."
-                    },
-                    "body": {
-                        "text": "fdgfgfhfgfgfg"
-                    },
-                    "footer": {
-                        "text": "Bodrum Yalıkavak İş Sağlığı ve Güvenliği Ltd. Şti."
-                    }
+                    "body": {"Yetkili olduğunuz firma bulunmamaktadır!"}
                 }
             }
         });
