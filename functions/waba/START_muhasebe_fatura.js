@@ -101,7 +101,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
   "template": {
     "name": "IBAN",
     "language": {
-      "code": "tr_TR"
+      "code": "tr"
     },
     "components": [
       {
@@ -119,7 +119,7 @@ const START_muhasebe_fatura = async (phoneNumber) => {
         "index": "0",
         "parameters": [
           {
-            "type": "Kopyala",
+            "type": "text",
             "text": "TR40 5075 9592 1151 11"
           }
         ]
